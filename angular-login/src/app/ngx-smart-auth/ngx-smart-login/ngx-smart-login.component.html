@@ -1,0 +1,50 @@
+<div class="mainTitle">
+  <p>
+    {{ mainTitle }}
+    <strong>{{ area }} </strong>
+    {{ leasingReanting }}
+  </p>
+</div>
+<div class="san-border">
+  <form [formGroup]="formLogin">
+    <div class="inputSize">
+      <small
+        class="validate-form"
+        *ngIf="
+          formLogin.get('user').touched &&
+          formLogin.get('user').hasError('alphanumeric')
+        "
+        ><i class="material-icons">error_outline</i>{{ validatorLabel }}</small
+      >
+      <small class="validate-form" *ngIf="responseMsg !== ''"
+        ><i class="material-icons">error_outline</i>{{ responseMsg }}</small
+      >
+      <san-presn-input
+        maxlength="{{ maxlengthUser }}"
+        minlength="{{ minlengthUser }}"
+        formControlName="user"
+        [label]="userLabel"
+        [placeholder]="userPlaceholder"
+      ></san-presn-input>
+    </div>
+    <div class="inputSize">
+      <san-presn-input
+        minlength="{{ minlengthPassword }}"
+        maxlength="{{ maxlengthPassword }}"
+        formControlName="password"
+        [label]="passwordLabel"
+        [placeholder]="passwordPlaceholder"
+      ></san-presn-input>
+    </div>
+  </form>
+  <div class="login-button">
+    <san-presn-button
+      [disabled]="formLogin.invalid"
+      (click)="login()"
+      [label]="buttonLabel"
+    ></san-presn-button>
+  </div>
+  <div>
+    <label for="" (click)="goTo()">{{ recoveryLabel }}</label>
+  </div>
+</div>

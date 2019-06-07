@@ -1,0 +1,55 @@
+<div class="mainTitle">
+  <p>
+    {{ mainTitle }}
+  </p>
+</div>
+<div class="lowTitle">
+  <p>
+    {{ lowTitle }}
+  </p>
+</div>
+<div class="san-border">
+  <form [formGroup]="formRetrievePassword">
+    <div class="inputSize">
+      <san-presn-input
+        maxlength="{{ maxlengthUser }}"
+        minlength="{{ minlengthUser }}"
+        formControlName="user"
+        [label]="userLabel"
+        [placeholder]="userPlaceholder"
+      ></san-presn-input>
+      <small
+        class="validate-form"
+        *ngIf="
+          formRetrievePassword.get('user').touched &&
+          formRetrievePassword.get('user').hasError('alphanumeric')
+        "
+        ><i class="material-icons">error_outline</i>{{ responseMsg }}</small
+      >
+    </div>
+    <div class="inputSize">
+      <san-presn-input
+        maxlength="{{ maxlengthEmail }}"
+        minlength="{{ minlengthEmail }}"
+        formControlName="email"
+        [label]="emailLabel"
+        [placeholder]="emailPlaceholder"
+      ></san-presn-input>
+      <small
+        class="validate-form"
+        *ngIf="
+          formRetrievePassword.get('email').touched &&
+          formRetrievePassword.get('email').hasError('email')
+        "
+        ><i class="material-icons">error_outline</i>{{ validatorLabel }}</small
+      >
+    </div>
+  </form>
+  <div class="recovery-button">
+    <san-presn-button
+      [disabled]="formRetrievePassword.invalid"
+      (click)="retrievePassword()"
+      [label]="buttonLabel"
+    ></san-presn-button>
+  </div>
+</div>
