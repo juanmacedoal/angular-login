@@ -1,28 +1,9 @@
-import {
-  LangSetupService,
-  langSetupFactory
-} from './initializr/lang/langSetup.service';
-import {
-  NgModule,
-  APP_INITIALIZER,
-  Injector,
-  ErrorHandler,
-  Optional,
-  SkipSelf
-} from '@angular/core';
-import {
-  HttpClientModule,
-  HttpClient,
-  HTTP_INTERCEPTORS
-} from '@angular/common/http';
+import { NgModule, APP_INITIALIZER, Injector, ErrorHandler, Optional, SkipSelf } from '@angular/core';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ConfigFactory } from './initializr/config/config.factory';
 import { ConfigService } from './initializr/config/config.service';
 import { Environment } from './initializr/config/config';
-import {
-  TranslateModule,
-  TranslateLoader,
-  TranslateService
-} from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { languageLoader } from './lang/lang.factory';
 import { ApiInterceptorService } from './api/interceptor/api-interceptor.service';
 import { ErrorHandlerService } from './error/error-handler.service';
@@ -68,16 +49,11 @@ import { ErrorInterceptorService } from './error/interceptor/error-interceptor.s
   ]
 })
 export class NgxCoreModule {
-  constructor(
-    @Optional() @SkipSelf() parentModule: NgxCoreModule,
-    private _translateSrv: TranslateService
-  ) {
+  constructor(@Optional() @SkipSelf() parentModule: NgxCoreModule, private _translateSrv: TranslateService) {
     this._translateSrv.addLangs(['en', 'es']);
     this._translateSrv.use('es');
     if (parentModule) {
-      throw new Error(
-        'CoreModule is already loaded. Import it in the AppModule only'
-      );
+      throw new Error('CoreModule is already loaded. Import it in the AppModule only');
     }
   }
 }

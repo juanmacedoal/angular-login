@@ -1,12 +1,6 @@
-import { CustomValidator } from './../../../../../ngx-presn/src/lib/input/custom-validators';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 /**
  *

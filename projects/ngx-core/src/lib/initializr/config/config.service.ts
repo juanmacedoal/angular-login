@@ -9,7 +9,6 @@ import { StoreService } from '../../store/store.service';
   providedIn: 'root'
 })
 export class ConfigService {
-
   public static URI_CONFIG = './config.json';
 
   private KEY_CONFIG = 'LYPRES-CONFIG';
@@ -20,35 +19,35 @@ export class ConfigService {
     @Inject('AppEnv') private appEnv: Environment,
     private browser: BrowserService,
     private store: StoreService
-  ) { }
+  ) {}
 
-  /**
-   * @description Inicializador para la aplicacion. Carga el fichero config.json que hay en la raiz del servidor.
-   *
-   * @returns Promise<any>
-   */
-  initializr(): Promise<any> {
-    this.logger.debug('Initilizr : config');
-    const cacheConf = this.store.recover<Config>(this.KEY_CONFIG);
+  // /**
+  //  * @description Inicializador para la aplicacion. Carga el fichero config.json que hay en la raiz del servidor.
+  //  *
+  //  * @returns Promise<any>
+  //  */
+  // initializr(): Promise<any> {
+  //   this.logger.debug('Initilizr : config');
+  //   const cacheConf = this.store.recover<Config>(this.KEY_CONFIG);
 
-    if (this.browser.isIE11() && cacheConf) {
-      return new Promise((resolve: Function) => {
-        this.setConfig(cacheConf);
-        resolve(cacheConf);
-      });
-    }
+  //   if (this.browser.isIE11() && cacheConf) {
+  //     return new Promise((resolve: Function) => {
+  //       this.setConfig(cacheConf);
+  //       resolve(cacheConf);
+  //     });
+  //   }
 
-    return this.http.get<Config>(ConfigService.URI_CONFIG).toPromise()
-      .then((config) => {
-        this.setConfig(config);
+  //   return this.http.get<Config>(ConfigService.URI_CONFIG).toPromise()
+  //     .then((config) => {
+  //       this.setConfig(config);
 
-        return config;
-      }, (error) => {
-        this.logger.error('Initilizr : config :: error', error);
+  //       return config;
+  //     }, (error) => {
+  //       this.logger.error('Initilizr : config :: error', error);
 
-        return error;
-      });
-  }
+  //       return error;
+  //     });
+  // }
 
   /**
    * @description Set the config in AppEnv. Detect if is IE 11 to store it.
@@ -66,5 +65,4 @@ export class ConfigService {
       this.store.save(this.KEY_CONFIG, config);
     }
   }
-
 }

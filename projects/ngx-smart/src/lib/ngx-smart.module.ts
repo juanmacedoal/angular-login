@@ -1,6 +1,6 @@
+import { NgxSmartAuthModule } from './../../../../src/app/ngx-smart-auth/ngx-smart-auth.module';
 import { NgModule } from '@angular/core';
 import { NgxSmartComponent } from './ngx-smart.component';
-import { NgxSmartAuthModule } from './ngx-smart-auth/ngx-smart-auth.module';
 
 @NgModule({
   imports: [NgxSmartAuthModule],
