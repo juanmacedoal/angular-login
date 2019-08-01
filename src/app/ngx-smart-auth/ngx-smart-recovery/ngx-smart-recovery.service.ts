@@ -1,4 +1,4 @@
-import { ApiService } from './../../../../projects/ngx-core/src/lib/api/api.service';
+import { ApiService } from 'core-components-jmmacedo';
 import { Validators } from '@angular/forms';
 import { Injectable } from '@angular/core';
 

@@ -9,7 +9,7 @@ import { TableModule } from './table/table.module';
 import { NgModule } from '@angular/core';
 import { NgxPresnComponent } from './ngx-presn.component';
 import { CommonModule } from '@angular/common';
-import { LangModule } from 'projects/ngx-core/src/public-api';
+import { LangModule } from 'core-components-jmmacedo';
 import { FormsModule } from '@angular/forms';
 
 const AngularModules = [CommonModule, FormsModule];

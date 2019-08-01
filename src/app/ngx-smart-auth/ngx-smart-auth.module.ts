@@ -11,7 +11,7 @@ import { NgxSmartLoginComponent } from './ngx-smart-login/ngx-smart-login.compon
 import { NgxSmartRecoveryComponent } from './ngx-smart-recovery/ngx-smart-recovery.component';
 import { NgxSmartChangePasswordComponent } from './ngx-smart-change-password/ngx-smart-change-password.component';
 import { InputModule } from 'projects/ngx-presn/src/lib/input/input.module';
-import { NgxCoreModule } from 'projects/ngx-core/src/public-api';
+import { CoreComponentsModule } from 'core-components-jmmacedo';
 
 /**
  * Module
@@ -27,7 +27,7 @@ import { NgxCoreModule } from 'projects/ngx-core/src/public-api';
     FormsModule,
     NgxSmartAuthRoutingModule,
     NgxPresnModule,
-    NgxCoreModule,
+    CoreComponentsModule,
     ReactiveFormsModule,
     InputModule,
     ButtonModule

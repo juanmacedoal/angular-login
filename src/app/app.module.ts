@@ -1,5 +1,5 @@
 import { AppRoutingModule } from './app-routing.module';
-import { NgxCoreModule } from 'projects/ngx-core/src/public-api';
+import { CoreComponentsModule } from 'core-components-jmmacedo';
 import { NgxSmartModule } from './../../projects/ngx-smart/src/lib/ngx-smart.module';
 import { NgxSmartAuthModule } from './ngx-smart-auth/ngx-smart-auth.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NgxSmartModule, NgxCoreModule, NgxSmartAuthModule, AppRoutingModule],
+  imports: [BrowserModule, NgxSmartModule, CoreComponentsModule, NgxSmartAuthModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { CustomValidator } from './../../projects/ngx-presn/src/lib/input/custom-validators';
-import { LangService } from './../../projects/ngx-core/src/lib/lang/lang.service';
+import { LangService } from 'core-components-jmmacedo';
 import { Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
