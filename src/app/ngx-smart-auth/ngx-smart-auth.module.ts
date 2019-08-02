@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 /** Modules */
-import { ButtonModule } from './../../../projects/ngx-presn/src/lib/button/button.module';
-import { NgxPresnModule } from './../../../projects/ngx-presn/src/lib/ngx-presn.module';
+import { ButtonModule } from 'presentation-components-jmmacedo';
+import { PresentationComponentsModule } from 'presentation-components-jmmacedo';
 import { NgxSmartAuthRoutingModule } from './ngx-smart-auth-routing.module';
 /** Components */
 import { NgxSmartLoginComponent } from './ngx-smart-login/ngx-smart-login.component';
 import { NgxSmartRecoveryComponent } from './ngx-smart-recovery/ngx-smart-recovery.component';
 import { NgxSmartChangePasswordComponent } from './ngx-smart-change-password/ngx-smart-change-password.component';
-import { InputModule } from 'projects/ngx-presn/src/lib/input/input.module';
+import { InputModule } from 'presentation-components-jmmacedo';
 import { CoreComponentsModule } from 'core-components-jmmacedo';
 
 /**
@@ -26,7 +26,7 @@ import { CoreComponentsModule } from 'core-components-jmmacedo';
     CommonModule,
     FormsModule,
     NgxSmartAuthRoutingModule,
-    NgxPresnModule,
+    PresentationComponentsModule,
     CoreComponentsModule,
     ReactiveFormsModule,
     InputModule,

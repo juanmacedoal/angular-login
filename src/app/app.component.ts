@@ -1,4 +1,4 @@
-import { CustomValidator } from './../../projects/ngx-presn/src/lib/input/custom-validators';
+import { CustomValidator } from 'presentation-components-jmmacedo';
 import { LangService } from 'core-components-jmmacedo';
 import { Validators } from '@angular/forms';
 import { Component } from '@angular/core';
